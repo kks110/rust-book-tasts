@@ -1,6 +1,6 @@
 use crate::helper;
 
-pub fn convert() {
+pub fn run() {
     loop {
         println!("Welcome, what would you like to do?:");
         println!("1) Convert to Fahrenheit ");
