@@ -16,6 +16,7 @@ pub fn get_user_input() -> String {
     input.to_string()
 }
 
+// These 3 need refactoring
 pub fn get_user_input_float() -> f32 {
     let input = loop {
         match get_user_input().trim().parse() {
@@ -36,6 +37,25 @@ pub fn get_user_input_unumber() -> u32 {
             Err(_) => {
                 println!("Please enter a number");
                 continue
+            },
+        };
+    };
+    input
+}
+
+pub fn get_user_input_inumber(break_on_letter: bool) -> Option<i32> {
+    let input: Option<i32> = loop {
+        match get_user_input().trim().parse() {
+            Ok(num) => {
+                break Some(num);
+            },
+            Err(_) => {
+                if break_on_letter {
+                    break None;
+                } else {
+                    println!("Please enter a number");
+                    continue
+                }
             },
         };
     };
