@@ -6,6 +6,7 @@ mod guessing_game;
 mod fibonacci;
 mod twelve_days_of_christmas;
 mod mean_mode_median;
+mod pig_latin_converter;
 
 fn main() {
     loop {
@@ -15,6 +16,7 @@ fn main() {
         println!("3) Fibonacci");
         println!("4) Twelve Days of Christmas");
         println!("5) Enter a list of number and receive the mean, mode and median numbers");
+        println!("6) Convert to Pig Latin");
 
         let option = helper::get_user_input();
 
@@ -32,6 +34,9 @@ fn main() {
             break
         } else if option == "5" {
             mean_mode_median::run();
+            break
+        } else if option == "6" {
+            pig_latin_converter::run();
             break
         } else {
             println!("Not a valid option, please try again.");
